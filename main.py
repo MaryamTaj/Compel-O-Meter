@@ -6,6 +6,26 @@ This file is Copyright (c) 2023 Akshaya D., Kashish M., Maryam T. and Pratibha T
 """
 
 from python_ta.contracts import check_contracts
+import csv
+
+
+def read_csv_positive_file(csv_file: str):
+    """..."""
+
+    with open(csv_file) as file:
+        reader = csv.reader(file)
+
+        i = 0
+        while i < 35:
+            next(reader)
+            i += 1
+
+        positive_words = {}
+        for row in reader:
+            positive_words[row[0]] = 1
+
+    return positive_words
+
 
 if __name__ == '__main__':
     import doctest
