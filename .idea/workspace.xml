@@ -4,21 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="f38f4717-85c2-4240-965a-5173a236cdc9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
+=======
+    <list default="true" id="dc3d0d23-5ab5-44c5-ae48-a108b8a05829" name="Changes" comment="what is this" />
+>>>>>>> 8bcbfe444b33293f4ca0f7f388745e6e4b358596
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -26,7 +23,11 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectId" id="2NOEN6Vnnw8MRk7BaWON47n5Tkj" />
+=======
+  <component name="ProjectId" id="2NODV9zyQzSKnIMAVr7LZTJUlbn" />
+>>>>>>> 8bcbfe444b33293f4ca0f7f388745e6e4b358596
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -35,18 +36,45 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+<<<<<<< HEAD
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+=======
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+>>>>>>> 8bcbfe444b33293f4ca0f7f388745e6e4b358596
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="f38f4717-85c2-4240-965a-5173a236cdc9" name="Changes" comment="" />
       <created>1679526684554</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679526684554</updated>
+=======
+      <changelist id="dc3d0d23-5ab5-44c5-ae48-a108b8a05829" name="Changes" comment="" />
+      <created>1679526256540</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1679526256540</updated>
+>>>>>>> 8bcbfe444b33293f4ca0f7f388745e6e4b358596
     </task>
+    <task id="LOCAL-00001" summary="what is this">
+      <created>1679527797706</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679527797706</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="what is this" />
+    <option name="LAST_COMMIT_MESSAGE" value="what is this" />
+  </component>
+>>>>>>> 8bcbfe444b33293f4ca0f7f388745e6e4b358596
 </project>
