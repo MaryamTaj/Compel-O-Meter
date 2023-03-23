@@ -1,11 +1,12 @@
 """..."""
 
 import csv
+from typing import Optional
 
 
-def read_csv_positive_file(csv_file1: str) -> dict[str, int]:
+def read_csv_positive_file(csv_file1: Optional[str] = None) -> dict[str, int]:
     """..."""
-
+    csv_file1 = 'data/positive_words.csv'
     with open(csv_file1) as file:
         reader = csv.reader(file)
 
