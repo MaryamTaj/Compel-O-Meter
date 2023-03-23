@@ -1,12 +1,13 @@
 """..."""
 
 import csv
-from typing import Optional
+
+from nltk.corpus import wordnet
 
 
-def read_csv_positive_file(csv_file1: Optional[str] = None) -> dict[str, int]:
+def read_csv_positive_file(csv_file1: str) -> dict[str, int]:
     """..."""
-    csv_file1 = 'data/positive_words.csv'
+
     with open(csv_file1) as file:
         reader = csv.reader(file)
 
@@ -18,6 +19,15 @@ def read_csv_positive_file(csv_file1: Optional[str] = None) -> dict[str, int]:
         words = {}
         for row in reader:
             words[row[0]] = 1
+
+    synonyms = []
+    for word in words:
+        for syn in wordnet.synsets(word):
+            for lemma in syn.lemmas():
+                synonyms.append(lemma.name())
+
+    for syns in synonyms:
+        words[syns] = 1
 
     return words
 
@@ -36,6 +46,15 @@ def read_csv_negative_file(csv_file1: str) -> dict[str, int]:
         words = {}
         for row in reader:
             words[row[0]] = -1
+
+    synonyms = []
+    for word in words:
+        for syn in wordnet.synsets(word):
+            for lemma in syn.lemmas():
+                synonyms.append(lemma.name())
+
+    for syns in synonyms:
+        words[syns] = -1
 
     return words
 
