@@ -7,37 +7,6 @@ This file is Copyright (c) 2023 Akshaya D., Kashish M., Maryam T. and Pratibha T
 
 <<<<<<< HEAD
 from python_ta.contracts import check_contracts
-import csv
-
-
-def read_csv_file(csv_file1: str, csv_file2: str) -> dict[str, int]:
-    """..."""
-
-    with open(csv_file1) as file:
-        reader = csv.reader(file)
-
-        i = 0
-        while i < 35:
-            next(reader)
-            i += 1
-
-        words = {}
-        for row in reader:
-            words[row[0]] = 1
-
-    with open(csv_file2) as file:
-        reader = csv.reader(file)
-
-        i = 0
-        while i < 35:
-            next(reader)
-            i += 1
-
-        for row in reader:
-            words[row[0]] = -1
-
-    return words
-
 =======
 # from python_ta.contracts import check_contracts
 import csv
