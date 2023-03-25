@@ -4,10 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="dc3d0d23-5ab5-44c5-ae48-a108b8a05829" name="Changes" comment="what is this">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
+=======
+<<<<<<< HEAD
+    <list default="true" id="f38f4717-85c2-4240-965a-5173a236cdc9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
+=======
+    <list default="true" id="dc3d0d23-5ab5-44c5-ae48-a108b8a05829" name="Changes" comment="" />
+>>>>>>> 8c9a4e58da72c00c6d6fa1e95c82401d09a88326
+>>>>>>> 247093dc6f1185f1018cc3435abfe8cbaf5ecb28
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +38,11 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+<<<<<<< HEAD
+  <component name="ProjectId" id="2NOEN6Vnnw8MRk7BaWON47n5Tkj" />
+=======
   <component name="ProjectId" id="2NODV9zyQzSKnIMAVr7LZTJUlbn" />
+>>>>>>> 8c9a4e58da72c00c6d6fa1e95c82401d09a88326
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -35,10 +51,22 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+<<<<<<< HEAD
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  }
+}</component>
+  <component name="RunManager">
+=======
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.read_csv">
+>>>>>>> 8c9a4e58da72c00c6d6fa1e95c82401d09a88326
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Compel-O-Meter" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -60,6 +88,10 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+<<<<<<< HEAD
+    <recent_temporary>
+      <list>
+=======
     <configuration name="read_csv" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Compel-O-Meter" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -81,6 +113,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.read_csv" />
+>>>>>>> 8c9a4e58da72c00c6d6fa1e95c82401d09a88326
         <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
@@ -88,6 +121,16 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
+      <changelist id="f38f4717-85c2-4240-965a-5173a236cdc9" name="Changes" comment="" />
+      <created>1679526684554</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1679526684554</updated>
+    </task>
+    <servers />
+  </component>
+=======
       <changelist id="dc3d0d23-5ab5-44c5-ae48-a108b8a05829" name="Changes" comment="" />
       <created>1679526256540</created>
       <option name="number" value="Default" />
@@ -115,4 +158,5 @@
     <MESSAGE value="what is this" />
     <option name="LAST_COMMIT_MESSAGE" value="what is this" />
   </component>
+>>>>>>> 8c9a4e58da72c00c6d6fa1e95c82401d09a88326
 </project>
