@@ -1,4 +1,4 @@
-"""..."""
+"""Generating the lexicon used for data analysis"""
 
 import csv
 
@@ -69,3 +69,6 @@ def return_dictionary(csv_file1: str, csv_file2: str) -> dict[str, int]:
         words[word] = -1
 
     return words
+
+
+return_dictionary('data/positive_words.csv', 'data/negative.csv')
