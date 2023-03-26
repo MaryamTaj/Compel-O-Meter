@@ -2,3 +2,5 @@
 snscrape
 pandas
 numpy
+nltk
+spacy
