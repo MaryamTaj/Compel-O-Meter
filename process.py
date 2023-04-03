@@ -4,6 +4,7 @@ Description
 ===========
 This file contains the all the functions needed to process a written textual post into something
 that we can create parse trees with and run sentiment analysis on :)
+
 Copyright
 ==========
 This file is Copyright (c) 2023 Akshaya Deepak Ramachandran, Kashish Mittal, Maryam Taj and Pratibha Thakur
