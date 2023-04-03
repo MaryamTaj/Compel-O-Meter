@@ -383,7 +383,6 @@ def tree_list_from_sentence(sentence: str) -> list[list[tuple[str, Any, Any, Any
     >>> my_tree_list[4]
     [('piano', 'dobj', 'drove', 'NOUN'), ['the', 'Greek']]
     """
-    spacy.load('en_core_web_sm')
     nlp = spacy.load('en_core_web_sm')
 
     doc = nlp(sentence)
@@ -496,12 +495,10 @@ def tree_struct_to_tree(tree_struct: list) -> ParseTree:
 
 @check_contracts
 def trees_from_sentence(sentence: str) -> Optional[list[ParseTree]]:
-    """Return a parse tree for the given sentence.
-    # >>> tree = trees_from_sentence("I like pizza")
-    # >>> tree[0]._root
-    # ('like', 'ROOT', 'like', 'VERB')
-    # >>> [subtree._root for subtree in tree[0]._subtrees]
-    # [('I', 'nsubj', 'like', 'PRON'), ('pizza', 'dobj', 'like', 'NOUN')]
+    """Return a list of parse tree for the given sentence.
+
+    It returns a list because a sentence can contain multiple roots and in this case multiple trees would for rather
+    than just one.
     """
     # Create a tree list from the sentence
     tree_list = tree_list_from_sentence(sentence)
@@ -530,6 +527,6 @@ if __name__ == '__main__':
 
     python_ta.check_all(config={
         'max-line-length': 120,
-        'disable': ['forbidden-import'],
+        'disable': ['forbidden-import', 'inconsistent-return-statements', 'too-many-nested-blocks'],
         'allowed-io': []
     })

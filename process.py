@@ -35,7 +35,7 @@ def text_to_sentences(text: str) -> list[str]:
 def upper_to_lower(sentences: list[str]) -> list[str]:
     """Turns all upper case characters to lower case
     >>> upper_to_lower(['Hi','How are you'])
-     ['hi', 'how are you']
+    ['hi', 'how are you']
     """
     return [str.lower(word) for word in sentences]
 
@@ -90,7 +90,7 @@ def lemmatize(word: str) -> str:
 
 @check_contracts
 def is_intensifier(word: str) -> bool:
-    """Check whether or not a word is an intensifier
+    """Check whether a word is an intensifier
 
     >>> is_intensifier('really')
     True

@@ -13,6 +13,7 @@ This file is Copyright (c) 2023 Akshaya Deepak Ramachandran, Kashish Mittal, Mar
 import os
 import pandas as pd
 import analysis
+# our graphical user interface can be found under the python file gui.py and gui_ai.py
 
 
 def tweet(usernames: list) -> dict[str: list[str]]:

@@ -30,7 +30,7 @@ def submit_name(event):
 
 # cretaing a window to allow users to interact with the data by allowing them to input text
 window = tk.Tk()
-window.title("Name Entry")
+window.title("Compel-O-Meter")
 window_width = 800
 window_height = 800
 screen_width = window.winfo_screenwidth()

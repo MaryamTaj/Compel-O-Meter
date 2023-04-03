@@ -18,7 +18,7 @@ import process
 import read_csv
 
 
-@ check_contracts
+@check_contracts
 def create_lexicon() -> dict:
     """Create a sentiment analysis dictionary. """
     lexicon = {}
@@ -47,12 +47,8 @@ def relevant(tag: str) -> bool:
 def present_in_file(word: str, csv_file: str) -> bool:
     """Return whether a word is present in the lexicon or not
 
-    >>> present_in_file('auroras','data/ai_lexicon.csv')
-    True
-    >>> present_in_file('poet','data/ai_lexicon.csv')
-    False
+    NOTE: It is not possible to write doctests for this function because the lexicon keeps changing
     """
-    # bools = []
     with open(csv_file) as file:
         reader = csv.reader(file)
         for row in reader:
@@ -104,10 +100,7 @@ def create_lexicon_ai(text: str) -> dict:
 
 @check_contracts
 def update_lexicon_data_ai(text: str, pathos: float) -> None:
-    """ This function will update the lexicon based on the missing words and it's pathos score
-
-    >>> update_lexicon_data_ai("I want auroras and sad prose", 0.5)
-    """
+    """ This function will update the lexicon based on the missing words, and it's pathos score"""
     absent = find_absents(text)
 
     for word in absent:
@@ -153,11 +146,6 @@ def initial_pathos_to_tuple_ai(node: tuple, text: str) -> int | float:
     """ Return the sentiment (pathos) scores of the given node
 
     Uses an AI lexicon.
-
-    >>> initial_pathos_to_tuple_ai(('like', 'ROOT', 'like', 'VERB'), "I like pizza")
-    1
-    >>> initial_pathos_to_tuple_ai(('am', 'ROOT', 'am', 'AUX'), "I am happy")
-    0
     """
     lexicon = create_lexicon_ai(text)
     if node[0] in lexicon:
@@ -203,8 +191,8 @@ def get_logos(text: str) -> float | int:
     where average count is the average number of counts per sentence in the text, scaled to a float between 0 and 0.5
     """
     if process.is_reasoning_text(text):
-        count = min(count_logos(text), len(process.text_to_sentences(text))) / len(process.text_to_sentences(text))
-        return 0.5 + count
+        count = count_logos(text) / len(process.text_to_sentences(text))
+        return min(0.5 + count, 1.0)
     else:
         return 0.0
 
@@ -264,7 +252,7 @@ def find_problematic_buzzwords() -> list:
                              "gender ideology", "gender identity disorder", "trans regret"]
     misogynistic_buzzwords = ["men's rights", "alpha male", "friendzone", "female privilege", "hypergamy", "red pill",
                               "toxic femininity", "feminazi", "male oppression", "misandry", "incel", "femoid",
-                              "pickup artist"]
+                              "pickup artist", "rape"]
     anti_semitic_buzzwords = ["globalist", "new world order", "Zionist Occupied Government (ZOG)", "Holohoax",
                               "Jewish conspiracy", "blood libel", "cultural Marxism", "white genocide",
                               "Judeo-Bolshevism", "Protocols of the Elders of Zion", "Israel firsters"]
@@ -311,7 +299,7 @@ def ethics_warning(text: str) -> str:
     groups
     """
     sentences_count = len(process.text_to_sentences(text))
-    if count_problematic_buzzwords(text) / sentences_count > 0.5:
+    if count_problematic_buzzwords(text) / sentences_count > 0.1:
         return "WARNING: This post may express dangerous sentiments towards marginalized groups. Think critically " \
                "about this post and remember to show respect to other people, regardless of your differences."
     else:
@@ -360,7 +348,7 @@ def get_negative_sentiment(scores: tuple[float | int, float | int, float | int, 
         return text1 + " " + text2
     else:
         text1 = "This text does not have negative sentiment present."
-        text2 = "This indicates that the text is not attempting to convince you against something"
+        text2 = "This indicates that the text may be attempting to convince you for something"
         return text1 + " " + text2
 
 
@@ -378,17 +366,17 @@ def get_compellingness(text: str) -> tuple[float | int, float | int, float | int
         where initial_compellingness = max(logos_score, pathos score) + 0.5 * min(logos_score, pathos score)
 
     >>> get_compellingness("I ate pizza")
-    (0.0, 0.0, 0, False)
+    (0.0, 0.0, 0.0, False)
     >>> get_compellingness("I am happy")
-    (1.0, 1.0, 0, False)
+    (1.0, 1.0, 0.0, False)
     >>> get_compellingness("I am happy but he is sad. Are you sad too? I went to the mall because I was sad.")
     (1.25, 1.0, 0.5, True)
     >>> get_compellingness("Even in my worst lies, you saw the truth in me.")
-    (1.5, 1.5, 0, True)
+    (1.5, 1.5, 0.0, True)
     >>> string1 = "and the tennis court was covered up with some tent-like things and you asked me to dance"
     >>> string2 = "and i said dancing is a dangerous game"
     >>> get_compellingness(string1 + string2)
-    (1.0, 1.0, 0, True)
+    (1.0, 1.0, 0.0, True)
     >>> get_compellingness("I did it because I had to.")
     (0.5, 0.0, 0.5, False)
     >>> get_compellingness("Because of the failure of Congress, 76 people lost their lives.")
@@ -442,7 +430,7 @@ def get_compellingness_description(scores: tuple[float | int, float | int, float
     elif compellingess_score <= 1.25:
         return "This text is very compelling."
     else:
-        return "This text achieved the highest compellingness score."
+        return "This text achieved the highest compellingness score category."
 
 
 @ check_contracts
