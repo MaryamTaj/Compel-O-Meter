@@ -36,9 +36,10 @@ def create_lexicon() -> dict:
 
 @check_contracts
 def relevant(tag: str) -> bool:
-    """Return whether the tag is relevant.
+    """Returns whether the pos tag is relevant.
 
-    A relevant tag for sentiment analysis is a verb, noun, or adjective.
+    A relevant tag for sentiment analysis is a verb, noun, or adjective as these
+    parts of speech often carry sentiment.
     """
     return tag.startswith('JJ') or tag.startswith('NN') or (tag.startswith('VB') and tag != 'VBP')
 
@@ -217,7 +218,7 @@ def get_pathos(text: str) -> tuple[float | int, bool]:
 
 @check_contracts
 def get_pathos_ai(text: str) -> (float, str):
-    """Return the pathos score for the given text alongside its direction (a '+' or '-' or 'undetermined').
+    """Returns the pathos score for the given text alongside its direction (a '+' or '-' or 'undetermined').
 
     The pathos score for a given text is the average of the pathos scores of all the roots of its
     constituent sentences.
@@ -235,7 +236,10 @@ def get_pathos_ai(text: str) -> (float, str):
 
 @ check_contracts
 def find_problematic_buzzwords() -> list:
-    """Return a list of problematic buzzwords"""
+    """Returns a list of problematic buzzwords. 
+    
+    Please note this function contains some disturbing language.
+    """
     incel_buzzwords = ["chad", "normie", "femoid", "Stacy", "roastie", "blackpill", "beta", "cuck", "hypergamy",
                        "oneitis", "looksmaxing"]
     white_supremacist_buzzwords = ["race realism", "white genocide", "cultural Marxism", "Jewish Question",
