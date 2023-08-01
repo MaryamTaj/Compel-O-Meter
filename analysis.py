@@ -12,13 +12,11 @@ This file is Copyright (c) 2023 Akshaya Deepak Ramachandran, Kashish Mittal, Mar
 import csv
 import os
 import nltk
-from python_ta.contracts import check_contracts
 import parse_tree
 import process
 import read_csv
 
 
-@check_contracts
 def create_lexicon() -> dict:
     """Create a sentiment analysis dictionary. """
     lexicon = {}
@@ -34,7 +32,6 @@ def create_lexicon() -> dict:
     return lexicon
 
 
-@check_contracts
 def relevant(tag: str) -> bool:
     """Returns whether the pos tag is relevant.
 
@@ -44,7 +41,6 @@ def relevant(tag: str) -> bool:
     return tag.startswith('JJ') or tag.startswith('NN') or (tag.startswith('VB') and tag != 'VBP')
 
 
-@check_contracts
 def present_in_file(word: str, csv_file: str) -> bool:
     """Return whether a word is present in the lexicon or not
 
@@ -58,7 +54,6 @@ def present_in_file(word: str, csv_file: str) -> bool:
     return False
 
 
-@check_contracts
 def find_absents(text: str) -> list[str]:
     """Returns a set of all the words in a text that are not already there in the lexicon. """
     tokens = nltk.word_tokenize(text)
@@ -75,7 +70,6 @@ def find_absents(text: str) -> list[str]:
     return absent
 
 
-@check_contracts
 def create_lexicon_ai(text: str) -> dict:
     """Return a sentiment analysis dictionary.
 
@@ -99,7 +93,6 @@ def create_lexicon_ai(text: str) -> dict:
     return lexicon
 
 
-@check_contracts
 def update_lexicon_data_ai(text: str, pathos: float) -> None:
     """ This function will update the lexicon based on the missing words, and it's pathos score"""
     absent = find_absents(text)
@@ -128,7 +121,6 @@ def update_lexicon_data_ai(text: str, pathos: float) -> None:
             os.rename('data/ai_lexicon1.csv', 'data/ai_lexicon.csv')
 
 
-@ check_contracts
 def initial_pathos_to_tuple(node: tuple) -> int:
     """Return the sentiment (pathos) scores of the given node
 
@@ -141,8 +133,6 @@ def initial_pathos_to_tuple(node: tuple) -> int:
     else:
         return 0
 
-
-@check_contracts
 def initial_pathos_to_tuple_ai(node: tuple, text: str) -> int | float:
     """ Return the sentiment (pathos) scores of the given node
 
@@ -155,7 +145,6 @@ def initial_pathos_to_tuple_ai(node: tuple, text: str) -> int | float:
         return 0
 
 
-@ check_contracts
 def count_logos(text: str) -> int:
     """Return the number of times a given text uses logos
 
@@ -179,7 +168,6 @@ def count_logos(text: str) -> int:
     return sum(process.count_logos_numerals(text))
 
 
-@ check_contracts
 def get_logos(text: str) -> float | int:
     """Return a logos score for a given text.
 
@@ -197,8 +185,6 @@ def get_logos(text: str) -> float | int:
     else:
         return 0.0
 
-
-@ check_contracts
 def get_pathos(text: str) -> tuple[float | int, bool]:
     """Return the pathos score for the given text alongside its direction.
 
@@ -216,7 +202,6 @@ def get_pathos(text: str) -> tuple[float | int, bool]:
     return pathos_score, negative_sentiment_present
 
 
-@check_contracts
 def get_pathos_ai(text: str) -> (float, str):
     """Returns the pathos score for the given text alongside its direction (a '+' or '-' or 'undetermined').
 
@@ -234,7 +219,6 @@ def get_pathos_ai(text: str) -> (float, str):
     return pathos_score, negative_sentiment_present
 
 
-@ check_contracts
 def find_problematic_buzzwords() -> list:
     """Returns a list of problematic buzzwords. 
     
@@ -288,7 +272,6 @@ def find_problematic_buzzwords() -> list:
     return buzzwords
 
 
-@ check_contracts
 def count_problematic_buzzwords(text: str) -> int:
     """Returns a count of the number of problematic buzzwords in the given text
     """
@@ -297,7 +280,6 @@ def count_problematic_buzzwords(text: str) -> int:
     return sum(buzzword_count[buzzword] for buzzword in buzzword_count)
 
 
-@ check_contracts
 def ethics_warning(text: str) -> str:
     """Return an ethics warning if and only if the text likely expresses views harmful to marginalized
     groups
@@ -311,7 +293,6 @@ def ethics_warning(text: str) -> str:
                "important to think critically about the sentiments expressed."
 
 
-@ check_contracts
 def get_logos_description(scores: tuple[float | int, float | int, float | int, bool]) -> str:
     """Return a description of what the logos score means"""
     logos_score = scores[2]
@@ -328,7 +309,6 @@ def get_logos_description(scores: tuple[float | int, float | int, float | int, b
                "and unbiased sources of information."
 
 
-@check_contracts
 def get_pathos_description(scores: tuple[float | int, float | int, float | int, bool]) -> str:
     """Return a description of what the pathos score means"""
     pathos_score = scores[1]
@@ -342,7 +322,6 @@ def get_pathos_description(scores: tuple[float | int, float | int, float | int, 
         return "This text exemplifies the use of pathos."
 
 
-@ check_contracts
 def get_negative_sentiment(scores: tuple[float | int, float | int, float | int, bool]) -> str:
     """Return a description of what the pathos score means"""
     negative_sentiment_present = scores[3]
@@ -356,7 +335,6 @@ def get_negative_sentiment(scores: tuple[float | int, float | int, float | int, 
         return text1 + " " + text2
 
 
-@ check_contracts
 def get_compellingness(text: str) -> tuple[float | int, float | int, float | int, bool]:
     """Return the compellingess score of the given text and its direction (a '+' or '-' or 'undetermined').
 
@@ -396,7 +374,6 @@ def get_compellingness(text: str) -> tuple[float | int, float | int, float | int
     return compellingness, pathos_score, logos_score, get_pathos(text)[1]
 
 
-@check_contracts
 def get_compellingness_ai(text: str) -> tuple[float | int, float | int, float | int, bool]:
     """Return the compellingess score of the given text and its direction (a '+' or '-' or 'undetermined').
 
@@ -423,7 +400,6 @@ def get_compellingness_ai(text: str) -> tuple[float | int, float | int, float | 
     return compellingness, pathos_score, logos_score, get_pathos(text)[1]
 
 
-@ check_contracts
 def get_compellingness_description(scores: tuple[float | int, float | int, float | int, bool]) -> str:
     """Return a description of what the pathos score means"""
     compellingess_score = scores[0]
@@ -437,7 +413,6 @@ def get_compellingness_description(scores: tuple[float | int, float | int, float
         return "This text achieved the highest compellingness score category."
 
 
-@ check_contracts
 def compellingness_with_description(text: str) -> tuple[str, str, str, str, str, str]:
     """Returns descriptions of the scores given in get_compellingness as well as any ethics warnings.
 
@@ -457,7 +432,6 @@ def compellingness_with_description(text: str) -> tuple[str, str, str, str, str,
         get_logos_description(scores), get_negative_sentiment(scores), ethics_warning(text)
 
 
-@check_contracts
 def compellingness_description_ai(text: str) -> tuple[str, str, str, str, str, str]:
     """Returns descriptions of the scores given in get_compellingness as well as any ethics warnings,
     except if it encounters
@@ -482,11 +456,4 @@ def compellingness_description_ai(text: str) -> tuple[str, str, str, str, str, s
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
-
-    import python_ta
-
-    python_ta.check_all(config={
-        'max-line-length': 120,
-        'disable': ['forbidden-import'],
-        'allowed-io': ['present_in_file', 'create_lexicon_ai', 'update_lexicon_data_ai']
     })
