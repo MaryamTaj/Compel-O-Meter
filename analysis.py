@@ -456,4 +456,4 @@ def compellingness_description_ai(text: str) -> tuple[str, str, str, str, str, s
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
-    })
+    
