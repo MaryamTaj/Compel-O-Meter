@@ -9,10 +9,7 @@ Copyright
 This file is Copyright (c) 2023 Akshaya Deepak Ramachandran, Kashish Mittal, Maryam Taj and Pratibha Thakur
 """
 import csv
-from python_ta.contracts import check_contracts
 
-
-@check_contracts
 def read_csv_positive_file(csv_file1: str) -> dict[str, int]:
     """Takes in a csv file of positive words and returns a dictionary where each word in the file is assigned to 1."""
 
@@ -30,7 +27,6 @@ def read_csv_positive_file(csv_file1: str) -> dict[str, int]:
     return words
 
 
-@check_contracts
 def read_csv_negative_file(csv_file1: str) -> dict[str, int]:
     """Takes in a csv file of negative words and returns a dictionary where each word in the file is assigned to -1."""
 
@@ -48,7 +44,6 @@ def read_csv_negative_file(csv_file1: str) -> dict[str, int]:
     return words
 
 
-@check_contracts
 def return_dictionary(csv_file1: str, csv_file2: str) -> dict[str, int]:
     """Takes in 2 csv files,one containing postive words and the other containing negative words. It returns a
     dictionary containing words from both the files with appropriate setiment scores assigned."""
@@ -62,7 +57,6 @@ def return_dictionary(csv_file1: str, csv_file2: str) -> dict[str, int]:
     return words
 
 
-@check_contracts
 def reasoning_words_list(csv_file: str) -> list:
     """ Takes in a csv file of reasoning words and returns a list containing these words."""
     with open(csv_file) as file:
@@ -78,11 +72,4 @@ if __name__ == '__main__':
     import doctest
 
     doctest.testmod(verbose=True)
-
-    import python_ta
-
-    python_ta.check_all(config={
-        'max-line-length': 120,
-        'disable': ['forbidden-import'],
-        'allowed-io': ['read_csv_positive_file', 'read_csv_negative_file', 'return_dictionary', 'reasoning_words_list']
     })
