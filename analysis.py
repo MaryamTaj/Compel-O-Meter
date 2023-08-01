@@ -15,6 +15,7 @@ import nltk
 import parse_tree
 import process
 import read_csv
+from typing import Union
 
 
 def create_lexicon() -> dict:
@@ -133,7 +134,7 @@ def initial_pathos_to_tuple(node: tuple) -> int:
     else:
         return 0
 
-def initial_pathos_to_tuple_ai(node: tuple, text: str) -> int | float:
+def initial_pathos_to_tuple_ai(node: tuple, text: str) -> Union[int, float]:
     """ Return the sentiment (pathos) scores of the given node
 
     Uses an AI lexicon.
