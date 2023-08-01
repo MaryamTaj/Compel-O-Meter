@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
 import analysis
+import spacy
 
+nlp = spacy.load('en_core_web_sm')
 app = Flask(__name__)
 
 
