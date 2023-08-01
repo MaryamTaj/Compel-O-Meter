@@ -508,4 +508,3 @@ def trees_from_sentences(sentences: list[str]) -> list[ParseTree]:
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
-    })
