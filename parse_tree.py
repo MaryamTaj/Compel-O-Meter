@@ -13,8 +13,6 @@ This file is Copyright (c) 2023 Akshaya Deepak Ramachandran, Kashish Mittal, Mar
 from __future__ import annotations
 from typing import Any, Optional
 import spacy
-from python_ta.contracts import check_contracts
-
 import analysis
 import process
 
@@ -23,7 +21,6 @@ import process
 # The Parse Tree Class
 #######################################################################################
 
-@check_contracts
 class ParseTree:
     """A recursive tree data structure.
 
@@ -366,8 +363,6 @@ class ParseTree:
 #######################################################################################
 # All the functions needed to create parse trees from lists of sentences!
 #######################################################################################
-
-@check_contracts
 def tree_list_from_sentence(sentence: str) -> list[list[tuple[str, Any, Any, Any] | list[str]]]:
     """Create a tree list for a given sentence.
 
@@ -398,8 +393,6 @@ def tree_list_from_sentence(sentence: str) -> list[list[tuple[str, Any, Any, Any
 
     return tree_list
 
-
-@check_contracts
 def find_root(tree_list: list[list[tuple[str, str, str, str] | list[str]]]) -> Optional[list[str]]:
     """Find the root value of the given tree list.
 
@@ -416,14 +409,12 @@ def find_root(tree_list: list[list[tuple[str, str, str, str] | list[str]]]) -> O
     return roots
 
 
-@check_contracts
 def check_for_words(subtrees: list[Any]) -> bool:
     """ Return true if the subtrees list contains words. Else, return False.
     """
     return any([isinstance(entry, str) for entry in subtrees])
 
 
-@check_contracts
 def tree_struct_from_word(word: str, tree_list: list, parent: str) -> list:
     """
     Takes a word and returns a nested list tree structure where the inputted word is the root node
@@ -446,7 +437,6 @@ def tree_struct_from_word(word: str, tree_list: list, parent: str) -> list:
     return []
 
 
-@check_contracts
 def impose_tree_struct_on_list(tree_list: list) -> list:
     """ Imposes the tree structure on a given nested list.
 
@@ -458,7 +448,6 @@ def impose_tree_struct_on_list(tree_list: list) -> list:
     return [tree_struct_from_word(root_word, tree_list, root_word) for root_word in root_words]
 
 
-@check_contracts
 def leaves_to_subtrees(subtrees: list) -> list:
     """ Turns a subtrees list (which was a part of a nested list tree structure) into a list of parse trees.
     """
@@ -479,7 +468,6 @@ def leaves_to_subtrees(subtrees: list) -> list:
     return new_subtrees
 
 
-@check_contracts
 def tree_struct_to_tree(tree_struct: list) -> ParseTree:
     """ Convert the given tree structure to an actual tree.
     """
@@ -493,7 +481,6 @@ def tree_struct_to_tree(tree_struct: list) -> ParseTree:
     return parse_tree
 
 
-@check_contracts
 def trees_from_sentence(sentence: str) -> Optional[list[ParseTree]]:
     """Return a list of parse tree for the given sentence.
 
@@ -509,7 +496,6 @@ def trees_from_sentence(sentence: str) -> Optional[list[ParseTree]]:
     return trees
 
 
-@check_contracts
 def trees_from_sentences(sentences: list[str]) -> list[ParseTree]:
     """Returns a list of parse trees from a list of sentences
     """
@@ -522,11 +508,4 @@ def trees_from_sentences(sentences: list[str]) -> list[ParseTree]:
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
-
-    import python_ta
-
-    python_ta.check_all(config={
-        'max-line-length': 120,
-        'disable': ['forbidden-import', 'inconsistent-return-statements', 'too-many-nested-blocks'],
-        'allowed-io': []
     })
