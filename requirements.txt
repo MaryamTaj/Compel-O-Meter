@@ -7,5 +7,5 @@ spacy~=3.5.1
 nltk~=3.8.1
 
 # other programs
-snscrape~=0.6.2.20230320
+snscrape~=0.3.4
 pandas~=1.5.3
