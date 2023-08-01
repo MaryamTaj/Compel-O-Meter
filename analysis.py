@@ -169,7 +169,7 @@ def count_logos(text: str) -> int:
     return sum(process.count_logos_numerals(text))
 
 
-def get_logos(text: str) -> float | int:
+def get_logos(text: str) -> Union[float, int]:
     """Return a logos score for a given text.
 
     Logos scores are in the range 0 to 1. A score of 0 indicates the absence of logos. A score of 1 indicates a
@@ -186,7 +186,7 @@ def get_logos(text: str) -> float | int:
     else:
         return 0.0
 
-def get_pathos(text: str) -> tuple[float | int, bool]:
+def get_pathos(text: str) -> tuple[Union[float, int], bool]:
     """Return the pathos score for the given text alongside its direction.
 
     The pathos score for a given text is the average of the pathos scores of all the roots of its
@@ -294,7 +294,7 @@ def ethics_warning(text: str) -> str:
                "important to think critically about the sentiments expressed."
 
 
-def get_logos_description(scores: tuple[float | int, float | int, float | int, bool]) -> str:
+def get_logos_description(scores: tuple[Union[float, int], Union[float, int], Union[float, int], bool]) -> str:
     """Return a description of what the logos score means"""
     logos_score = scores[2]
     if logos_score <= 0.25:
@@ -310,7 +310,7 @@ def get_logos_description(scores: tuple[float | int, float | int, float | int, b
                "and unbiased sources of information."
 
 
-def get_pathos_description(scores: tuple[float | int, float | int, float | int, bool]) -> str:
+def get_pathos_description(scores: tuple[Union[float, int], Union[float, int], Union[float, int], bool]) -> str:
     """Return a description of what the pathos score means"""
     pathos_score = scores[1]
     if pathos_score <= 0.25:
@@ -323,7 +323,7 @@ def get_pathos_description(scores: tuple[float | int, float | int, float | int, 
         return "This text exemplifies the use of pathos."
 
 
-def get_negative_sentiment(scores: tuple[float | int, float | int, float | int, bool]) -> str:
+def get_negative_sentiment(scores: tuple[Union[float, int], Union[float, int], Union[float, int], bool]) -> str:
     """Return a description of what the pathos score means"""
     negative_sentiment_present = scores[3]
     if negative_sentiment_present:
@@ -336,7 +336,7 @@ def get_negative_sentiment(scores: tuple[float | int, float | int, float | int, 
         return text1 + " " + text2
 
 
-def get_compellingness(text: str) -> tuple[float | int, float | int, float | int, bool]:
+def get_compellingness(text: str) -> tuple[Union[float, int], Union[float, int], Union[float, int], bool]:
     """Return the compellingess score of the given text and its direction (a '+' or '-' or 'undetermined').
 
     This function uses the following piecewise formula:
@@ -375,7 +375,7 @@ def get_compellingness(text: str) -> tuple[float | int, float | int, float | int
     return compellingness, pathos_score, logos_score, get_pathos(text)[1]
 
 
-def get_compellingness_ai(text: str) -> tuple[float | int, float | int, float | int, bool]:
+def get_compellingness_ai(text: str) -> tuple[Union[float, int], Union[float, int], Union[float, int], bool]:
     """Return the compellingess score of the given text and its direction (a '+' or '-' or 'undetermined').
 
     This function uses the following piecewise formula:
@@ -401,7 +401,7 @@ def get_compellingness_ai(text: str) -> tuple[float | int, float | int, float | 
     return compellingness, pathos_score, logos_score, get_pathos(text)[1]
 
 
-def get_compellingness_description(scores: tuple[float | int, float | int, float | int, bool]) -> str:
+def get_compellingness_description(scores: tuple[Union[float, int], Union[float, int], Union[float, int], bool]) -> str:
     """Return a description of what the pathos score means"""
     compellingess_score = scores[0]
     if compellingess_score <= 0.25:
