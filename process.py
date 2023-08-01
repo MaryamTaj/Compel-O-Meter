@@ -12,7 +12,6 @@ This file is Copyright (c) 2023 Akshaya Deepak Ramachandran, Kashish Mittal, Mar
 
 from __future__ import annotations
 import re
-from python_ta.contracts import check_contracts
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import wordnet
 import nltk
@@ -20,7 +19,6 @@ import spacy
 import read_csv
 
 
-@check_contracts
 def text_to_sentences(text: str) -> list[str]:
     """ Breaks a text up into a list of the sentences it's composed of.
     >>> text_to_sentences("We should not buy more? We have 13, 14, and 15 cars, trucks, and tractors, respectively.")
@@ -32,7 +30,6 @@ def text_to_sentences(text: str) -> list[str]:
     return [sentence for sentence in sentences if sentence != '']
 
 
-@check_contracts
 def upper_to_lower(sentences: list[str]) -> list[str]:
     """Turns all upper case characters to lower case
     >>> upper_to_lower(['Hi','How are you'])
@@ -41,7 +38,6 @@ def upper_to_lower(sentences: list[str]) -> list[str]:
     return [str.lower(word) for word in sentences]
 
 
-@check_contracts
 def lemmatize(word: str) -> str:
     """ Convert a word to its base or dictionary form, also known as a lemma. This makes it possible to compare the word
     with the words in the lexicon.
@@ -89,7 +85,6 @@ def lemmatize(word: str) -> str:
         return word
 
 
-@check_contracts
 def is_intensifier(word: str) -> bool:
     """Check whether a word is an intensifier
 
@@ -113,7 +108,6 @@ def is_intensifier(word: str) -> bool:
         return True
 
 
-@check_contracts
 def is_superlative(word: str) -> bool:
     """Check whether or not a word is a supperlative
 
@@ -132,7 +126,6 @@ def is_superlative(word: str) -> bool:
         return False
 
 
-@check_contracts
 def is_numeral(word: str) -> bool:
     """ Return True if the given word is a numeral and False otherwise.
 
@@ -162,7 +155,6 @@ def is_numeral(word: str) -> bool:
         return True
 
 
-@check_contracts
 def count_numerals(sentence: str) -> int:
     """Return the number of numerals in a sentence
 
@@ -179,7 +171,6 @@ def count_numerals(sentence: str) -> int:
     return sum([is_numeral(num) for num in sentence])
 
 
-@check_contracts
 def is_reasoning_text(text: str) -> bool:
     """Return True if the inputted text contains one or more words
     or phrases frequently used for reasoning purposes and False if not.
@@ -199,7 +190,6 @@ def is_reasoning_text(text: str) -> bool:
     return False
 
 
-@check_contracts
 def count_logos_numerals(text: str) -> list[int]:
     """Return a list of counts of logos numerals in each sentece of a text.
 
@@ -235,13 +225,11 @@ def count_logos_numerals(text: str) -> list[int]:
     return logos_num
 
 
-@check_contracts
 def handle_multiline(text: str) -> str:
     """Return a new text where all lines and merged into one."""
     return text.replace('\n', ' ')
 
 
-@check_contracts
 def process_text(text: str) -> list[str]:
     """Takes a given text and returns a list of independent clauses where all characters are in lower case
     >>> text = 'The castle crumbled overnight because I brought a knife to a gunfight. They took the crown but it is ok.'
@@ -258,11 +246,4 @@ if __name__ == '__main__':
     import doctest
 
     doctest.testmod(verbose=True)
-
-    import python_ta
-
-    python_ta.check_all(config={
-        'max-line-length': 120,
-        'disable': ['forbidden-import'],
-        'allowed-io': ['is_reasoning_text']
     })
