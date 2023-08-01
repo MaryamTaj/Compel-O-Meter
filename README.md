@@ -12,7 +12,7 @@ https://github.com/MaryamTaj/Compel-O-Meter/assets/109046900/a137549b-0e66-485a-
 
 
 
-Try it yourself: https://compel-o-meter-maryam.onrender.com
+Try it yourself: https://compel-o-meter.onrender.com
 
 
 ## Contributors
