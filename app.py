@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import analysis
 import spacy
+import nltkmodules
 
 spacy.load('en_core_web_sm')
 app = Flask(__name__)
