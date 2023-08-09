@@ -17,6 +17,11 @@ def launch():
     return render_template('launch.html')
 
 
+@app.route('/loading', methods=['POST'])
+def loading_model():
+    return render_template ('loading.html')
+
+
 @app.route('/submit', methods=['POST'])
 def submit():
     text = request.form['text']
