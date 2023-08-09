@@ -3,8 +3,13 @@
 <head>
     <title>Compel-O-Meter</title>
     <link rel="stylesheet" type="text/css" href="/static/style.css" />
+    <script src="{{ url_for('static', filename='loading.js') }}"></script>
+</head>
 </head>
 <body>
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
     <div id="Glance">
         <h1 align="center">Compellingness Report</h1>
         <h2>At a Glance</h2>
