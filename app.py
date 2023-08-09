@@ -19,7 +19,7 @@ def launch():
 
 @app.route('/load', methods=['POST'])
 def load():
-    return render_template ('loading.html')
+    return render_template ('load.html')
 
 
 @app.route('/submit', methods=['POST'])
