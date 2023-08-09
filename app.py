@@ -19,12 +19,12 @@ def launch():
 
 @app.route('/load', methods=['POST'])
 def load():
-    text = request.form['text']
-    return render_template ('load.html'), text
+    return render_template ('load.html')
 
 
 @app.route('/submit', methods=['POST'])
-def submit(text):
+def submit():
+    text = request.form['text']
     result = analysis.get_compellingness_ai(text)
     descriptions = analysis.get_compellingness_description(result)
     warnings = analysis.ethics_warning(text)
