@@ -16,27 +16,7 @@
         </ul>
         <p>{{ descriptions }}</p>
         <p>{{ pathos }} {{ logos }}</p>
-        <button class="scroll-button" onclick="redirectToLaunch()">Re-launch</button>
-        <div class="loader"></div>
-        <script>
-            function redirectToLaunch() {
-                window.location.href = "{{ url_for('launch') }}";
-            }
-
-             document.onreadystatechange = function() {
-            if (document.readyState !== "complete") {
-                document.querySelector(
-                  "body").style.visibility = "hidden"
-                document.querySelector(
-                  ".loader").style.visibility = "visible"
-            } else {
-                document.querySelector(
-                  ".loader").style.display = "none"
-                document.querySelector(
-                  "body").style.visibility = "visible"
-                }
-            }
-        </script>
+        <button class="scroll-button" onclick="redirectToLaunch()">Re-launch</button>  
     </div>
 
 </body>
