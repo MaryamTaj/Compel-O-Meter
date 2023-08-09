@@ -17,7 +17,7 @@ def launch():
     return render_template('launch.html')
 
 
-@app.route('/load', methods=['POST'])
+@app.route('/load')
 def load():
     return render_template ('load.html')
 
