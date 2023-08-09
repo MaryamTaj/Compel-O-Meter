@@ -17,8 +17,8 @@ def launch():
     return render_template('launch.html')
 
 
-@app.route('/loading', methods=['POST'])
-def loading_model():
+@app.route('/load', methods=['POST'])
+def load():
     return render_template ('loading.html')
 
 
