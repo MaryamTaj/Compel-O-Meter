@@ -17,12 +17,12 @@ def launch():
     return render_template('launch.html')
 
 
-@app.route('/load')
+@app.route('/load', methods=['POST'])
 def load():
     return render_template ('load.html')
 
 
-@app.route('/submit', methods=['POST'])
+@app.route('/submit', methods=['POST', 'GET'])
 def submit():
     text = request.form['text']
     result = analysis.get_compellingness_ai(text)
