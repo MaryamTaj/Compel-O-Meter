@@ -4,7 +4,6 @@
     <title>Compel-O-Meter</title>
     <link rel="stylesheet" type="text/css" href="/static/style.css" />
 </head>
-</head>
 <body>
     <div id="Glance">
         <h1 align="center">Compellingness Report</h1>
@@ -15,8 +14,13 @@
         <li>Logos Score: {{ result[2] }}</li>
         </ul>
         <p>{{ descriptions }}</p>
-        <p>{{ pathos }} {{ logos }}</p>
-        <button class="scroll-button" onclick="redirectToLaunch()">Re-launch</button>  
+        <p>{{ pathos }} {{ logos }} {{ warnings }}</p>
+        <button class="scroll-button" onclick="redirectToLaunch()">Re-launch</button>
+        <script>
+            function redirectToLaunch() {
+                window.location.href = "{{ url_for('launch') }}";
+            }
+        </script>
     </div>
 
 </body>
