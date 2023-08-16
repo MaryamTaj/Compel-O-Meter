@@ -6,7 +6,6 @@ import nltkmodules
 spacy.load('en_core_web_sm')
 app = Flask(__name__)
 
-
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -17,12 +16,7 @@ def launch():
     return render_template('launch.html')
 
 
-@app.route('/load', methods=['POST'])
-def load():
-    return render_template ('load.html')
-
-
-@app.route('/submit', methods=['POST', 'GET'])
+@app.route('/submit', methods=['POST'])
 def submit():
     text = request.form['text']
     result = analysis.get_compellingness_ai(text)
