@@ -8,7 +8,7 @@ Compel-O-Meter is a tool to help individuals critically evaluate written content
 Here is a video demonstration: 
 
 
-https://github.com/MaryamTaj/Compel-O-Meter/assets/109046900/a137549b-0e66-485a-91fc-a8bb5b8bf0ec
+https://github.com/MaryamTaj/Compel-O-Meter/assets/113269381/45aef5b1-40d8-4ec6-8f8f-09a2c90963e1
 
 
 
