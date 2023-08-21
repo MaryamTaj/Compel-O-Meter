@@ -17,7 +17,7 @@ Try it yourself: https://compel-o-meter.onrender.com
 
 ## Contributors
 
-Akshaya Deepak Ramachandran , Kashish Mittal, Maryam Taj, and Pratibha Thakur (in alphabetical order).
+Akshaya Deepak Ramachandran, Kashish Mittal, Maryam Taj, and Pratibha Thakur (in alphabetical order).
 
  
 
