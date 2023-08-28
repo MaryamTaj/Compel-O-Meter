@@ -8,11 +8,11 @@ Compel-O-Meter is a tool to help individuals critically evaluate written content
 Here is a video demonstration: 
 
 
-https://github.com/MaryamTaj/Compel-O-Meter/assets/113269381/45aef5b1-40d8-4ec6-8f8f-09a2c90963e1
+Uploading Compel-O-Meter - Google Chrome 2023-08-28 04-59-15.mp4…
 
 
 
-Try it yourself: https://compel-o-meter.onrender.com
+Try it yourself: http://compelometer.pythonanywhere.com/ 
 
 
 ## Contributors
